@@ -1,5 +1,4 @@
 
-    // DOM Selection
     let taskInput = document.getElementById("taskInput");
     let addBtn = document.getElementById("addBtn");
     let taskList = document.getElementById("taskList");
@@ -26,11 +25,10 @@ btn.addEventListener("click", function() {
 
     // Event Listener
     addBtn.addEventListener("click", function () {
-
-      // Input Value
+        
       let taskText = taskInput.value;
 
-      // Condition
+      
       if (taskText === "") {
         alert("Please enter a task");
         return;
@@ -41,27 +39,23 @@ btn.addEventListener("click", function() {
       let span = document.createElement("span");
       let deleteBtn = document.createElement("button");
 
-      // Add Text
       span.innerText = taskText;
       deleteBtn.innerText = "Delete";
 
-      // Add Class
       deleteBtn.classList.add("delete-btn");
 
-      // Append Child
       li.appendChild(span);
       li.appendChild(deleteBtn);
       taskList.appendChild(li);
 
-      // Clear Input
       taskInput.value = "";
 
-      // Toggle Complete
+      
       span.addEventListener("click", function () {
         span.classList.toggle("completed");
       });
 
-      // Delete Task
+      
       deleteBtn.addEventListener("click", function () {
         li.remove();
       });
